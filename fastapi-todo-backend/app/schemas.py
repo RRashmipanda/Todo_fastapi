@@ -5,7 +5,7 @@
 
 from pydantic import BaseModel, Field # type: ignore
 from typing import Optional
-from bson import ObjectId
+from bson import ObjectId # type: ignore
 
 class PyObjectId(ObjectId):
     @classmethod

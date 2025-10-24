@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo import MongoClient # type: ignore
 from app.config import MONGO_URL, DB_NAME
 
 client = MongoClient(MONGO_URL)
