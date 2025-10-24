@@ -17,6 +17,7 @@ def create_todo(todo: TodoCreate):
     created_todo = todos_collection.find_one({"_id": result.inserted_id})
     return created_todo
 
+
 @router.put("/{todo_id}", response_model=TodoResponse)
 def update_todo(todo_id: str, todo: TodoCreate):
     if not ObjectId.is_valid(todo_id):
@@ -31,6 +32,7 @@ def update_todo(todo_id: str, todo: TodoCreate):
 
     updated = todos_collection.find_one({"_id": ObjectId(todo_id)})
     return updated
+
 
 @router.delete("/{todo_id}")
 def delete_todo(todo_id: str):
